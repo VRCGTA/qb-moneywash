@@ -24,7 +24,7 @@ RegisterNetEvent('kezi:moneywash', function(amount, playerCoords)
     local bidentax = (amount * tax) / 100
     local newAmount = amount - bidentax
 
-    if Player.Functions.RemoveItem('markedbills', amount) then
+    if Player.Functions.RemoveItem('blackmoney', amount) then
         TriggerClientEvent('chatMessage', src, '^2Moneywash', {255, 255, 255}, 'You will receive in 30 seconds. $' .. tonumber(newAmount) .. ' clean money.')
       --  Citizen.Wait(30000) -- 30-second timer
         Player.Functions.AddMoney('cash', newAmount)
